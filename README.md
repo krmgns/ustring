@@ -13,18 +13,28 @@ print $ustr->toLower(); // üzüm
 
 [](#)
 
-[set](#set)
-[get](#get)
+[set](#set)<br>
+[get](#get)<br>
+[toLower](#toLower)<br>
+[toUpper](#toUpper)<br>
 
 
 #### set
-
 ```php
 $ustr->set('New string!');
 ```
 
 #### get
-
 ```php
 print $ustr->get();
+```
+
+#### toLower
+```php
+print $ustr->toLower(); // üzüm
+```
+
+#### toUpper
+```php
+print $ustr->toUpper(); // ÜZÜM
 ```
