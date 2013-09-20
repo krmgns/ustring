@@ -6,7 +6,7 @@ header('Content-Type: text/plain; charset='. $encoding);
 require_once __DIR__ .'/../UString/UStringException.php';
 require_once __DIR__ .'/../UString/UString.php';
 
-$ustr = new UString('Üzüm gözlü YÂR!', $encoding);
+$ustr = new UString('Üzüm üzüm', $encoding);
 // $ustr = new UString('Is this a test kiss?', $encoding);
 
 // pre($ustr->toLower());
@@ -18,13 +18,13 @@ $ustr = new UString('Üzüm gözlü YÂR!', $encoding);
 // pre($ustr->positionLeft('ü'));
 // pre($ustr->positionRight('ü'));
 
-// pre($ustr->substring(1));
-// pre($ustr->substring(-1));
-// pre($ustr->substring(-5));
-// pre($ustr->substring(-5, 1));
-// pre($ustr->substring(0, 1));
-// pre($ustr->substring(0, -1));
-// pre($ustr->substring(-3, -1));
+pre($ustr->substring(1));
+pre($ustr->substring(-1));
+pre($ustr->substring(-5));
+pre($ustr->substring(-5, 1));
+pre($ustr->substring(0, 1));
+pre($ustr->substring(0, -1));
+pre($ustr->substring(-3, -1));
 
 // pre($ustr->countChars());
 // pre($ustr->countSubstring('is', true));
@@ -37,9 +37,9 @@ $ustr = new UString('Üzüm gözlü YÂR!', $encoding);
 // pre($ustr->last());
 // pre($ustr->nth(0));
 
-// pre($ustr->firstIs('Ü'));
-// pre($ustr->lastIs('m'));
-// pre($ustr->nthIs(0, 'Ü'));
+// pre($ustr->firstCharIs('Ü'));
+// pre($ustr->lastCharIs('m'));
+// pre($ustr->nthCharIs(2, 'ü'));
 
 // pre($ustr->shift());
 // pre($ustr->pop());
