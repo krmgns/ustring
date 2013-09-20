@@ -155,7 +155,8 @@ print $ustr->substring(0, -1);
 print $ustr->substring(-3, -1);
 ```
 
-#### countSubstring `(string $substr, bool $caseSensitive = true, int $offset = 0, int $length = null)`
+#### countSubstring
+`(string $substr, bool $caseSensitive = true, int $offset = 0, int $length = null)`
 ```php
 print $ustr->countSubstring('ü', true);     // 3
 print $ustr->countSubstring('ü', false);    // 4
