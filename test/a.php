@@ -18,18 +18,18 @@ $ustr = new UString('Üzüm üzüm', $encoding);
 // pre($ustr->positionLeft('ü'));
 // pre($ustr->positionRight('ü'));
 
-pre($ustr->substring(1));
-pre($ustr->substring(-1));
-pre($ustr->substring(-5));
-pre($ustr->substring(-5, 1));
-pre($ustr->substring(0, 1));
-pre($ustr->substring(0, -1));
-pre($ustr->substring(-3, -1));
+// pre($ustr->substring(1));
+// pre($ustr->substring(-1));
+// pre($ustr->substring(-5));
+// pre($ustr->substring(-5, 1));
+// pre($ustr->substring(0, 1));
+// pre($ustr->substring(0, -1));
+// pre($ustr->substring(-3, -1));
 
 // pre($ustr->countChars());
-// pre($ustr->countSubstring('is', true));
-// pre($ustr->countSubstring('is', false));
-// pre($ustr->countSubstring('is', false, 1));
+// pre($ustr->countSubstring('ü', true));
+// pre($ustr->countSubstring('ü', false));
+// pre($ustr->countSubstring('ü', false, 3));
 
 // pre($ustr->length());
 

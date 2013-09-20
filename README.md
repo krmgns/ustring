@@ -34,6 +34,7 @@ print $ustr->toLower(); // üzüm üzüm
 * [reverse](#reverse)
 * [shuffle](#shuffle)
 * [substring](#substring)
+* [countSubstring](#countSubstring)
 
 
 #### set
@@ -152,6 +153,13 @@ print $ustr->substring(-5, 1);
 print $ustr->substring(0, 1);
 print $ustr->substring(0, -1);
 print $ustr->substring(-3, -1);
+```
+
+#### countSubstring `(string $substr, bool $caseSensitive = true, int $offset = 0, int $length = null)`
+```php
+print $ustr->countSubstring('ü', true);     // 3
+print $ustr->countSubstring('ü', false);    // 4
+print $ustr->countSubstring('ü', false, 3); // 2
 ```
 
 

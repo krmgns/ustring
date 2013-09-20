@@ -333,19 +333,19 @@ class UString
     /**
      * Count sub-string frequency
      *
-     * @param  string  $sstr
+     * @param  string  $substr
      * @param  boolean $caseSensitive
      * @return int
      */
-    public function countSubstring($sstr, $caseSensitive = true, $offset = 0, $length = null) {
+    public function countSubstring($substr, $caseSensitive = true, $offset = 0, $length = null) {
         $str = $this->stringify();
         if ($offset) {
             $str = $this->substring($offset, $length);
         }
 
         $pattern = $caseSensitive
-            ? '~(?:'. preg_quote($sstr) .')~u'
-            : '~(?:'. preg_quote($sstr) .')~ui';
+            ? '~(?:'. preg_quote($substr) .')~u'
+            : '~(?:'. preg_quote($substr) .')~ui';
         preg_match_all($pattern, $str, $matches);
 
         return isset($matches[0]) ? count($matches[0]) : 0;
