@@ -11,31 +11,31 @@ print $ustr->toLower(); // üzüm üzüm
 
 **Methods**
 
-[](#)
-
 * [set](#set)
 * [get](#get)
-* [toLower](#toLower)
-* [toUpper](#toUpper)
-* [toTitle](#toTitle)
+* [toLower](#tolower)
+* [toUpper](#toupper)
+* [toTitle](#totitle)
 * [slugify](#slugify)
-* [toLowerFirst](#toLowerFirst)
-* [toUpperFirst](#toUpperFirst)
-* [toLowerWords](#toLowerWords)
-* [toUpperWords](#toUpperWords)
+* [toLowerFirst](#tolowerfirst)
+* [toUpperFirst](#toupperfirst)
+* [toLowerWords](#tolowerwords)
+* [toUpperWords](#toupperwords)
 * [first](#first)
 * [last](#last)
 * [nth](#nth)
-* [firstCharIs](#firstCharIs)
-* [lastCharIs](#lastCharIs)
-* [nthCharIs](#nthCharIs)
+* [firstCharIs](#firstcharis)
+* [lastCharIs](#lastcharis)
+* [nthCharIs](#nthcharis)
 * [shift](#shift)
 * [pop](#pop)
 * [reverse](#reverse)
 * [shuffle](#shuffle)
 * [substring](#substring)
-* [countSubstring](#countSubstring)
-* [countChars](#countChars)
+* [countSubstring](#countsubstring)
+* [countChars](#countchars)
+* [length](#length)
+* [position positionLeft positionRight](#position)
 
 
 #### set
@@ -169,6 +169,7 @@ print $ustr->countChars('ü');   // frequency of "ü" (int)
 print $ustr->countChars(true);  // all chars with own frequencies (array)
 print $ustr->countChars(false); // count of uniq chars (int)
 
+/*
 3
 Array
 (
@@ -179,6 +180,20 @@ Array
     [ ] => 1
 )
 5
+*/
+```
+
+#### length
+```php
+print $ustr->length(); // 9
+```
+
+#### position positionLeft positionRight
+```php
+print $ustr->position('ü');        // 2
+print $ustr->position('ü', false); // 0
+print $ustr->positionLeft('ü');    // 2 (alias of position)
+print $ustr->positionRight('ü');   // 7
 ```
 
 

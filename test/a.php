@@ -14,9 +14,10 @@ $ustr = new UString('Üzüm üzüm', $encoding);
 // pre($ustr->toTitle());
 
 // pre($ustr->charAt(0));
-// pre($ustr->position('ü', false));
-// pre($ustr->positionLeft('ü'));
-// pre($ustr->positionRight('ü'));
+pre($ustr->position('ü'));
+pre($ustr->position('ü', false));
+pre($ustr->positionLeft('ü'));
+pre($ustr->positionRight('ü'));
 
 // pre($ustr->substring(1));
 // pre($ustr->substring(-1));
@@ -29,9 +30,9 @@ $ustr = new UString('Üzüm üzüm', $encoding);
 // pre($ustr->countSubstring('ü', true));
 // pre($ustr->countSubstring('ü', false));
 // pre($ustr->countSubstring('ü', false, 3));
-pre($ustr->countChars('ü'));
-pre($ustr->countChars(true));
-pre($ustr->countChars(false));
+// pre($ustr->countChars('ü'));
+// pre($ustr->countChars(true));
+// pre($ustr->countChars(false));
 
 // pre($ustr->length());
 

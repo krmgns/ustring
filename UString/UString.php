@@ -382,11 +382,11 @@ class UString
      * @return int
      */
     public function length() {
-        if ($this->isASCII()) {
-            return strlen($this->stringify());
-        }
-
-        return count($this->_explode());
+        return mb_strlen($this->stringify());
+        // if ($this->isASCII()) {
+        //     return strlen($this->stringify());
+        // }
+        // return count($this->_explode());
     }
 
     /**
