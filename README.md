@@ -13,10 +13,10 @@ print $ustr->toLower(); // üzüm
 
 [](#)
 
-[set](#set)<br>
-[get](#get)<br>
-[toLower](#toLower)<br>
-[toUpper](#toUpper)<br>
+*[set](#set)
+*[get](#get)
+*[toLower](#toLower)
+*[toUpper](#toUpper)
 
 
 #### set
