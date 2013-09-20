@@ -35,6 +35,7 @@ print $ustr->toLower(); // üzüm üzüm
 * [shuffle](#shuffle)
 * [substring](#substring)
 * [countSubstring](#countSubstring)
+* [countChars](#countChars)
 
 
 #### set
@@ -156,11 +157,28 @@ print $ustr->substring(-3, -1);
 ```
 
 #### countSubstring
-`(string $substr, bool $caseSensitive = true, int $offset = 0, int $length = null)`
 ```php
 print $ustr->countSubstring('ü', true);     // 3
 print $ustr->countSubstring('ü', false);    // 4
 print $ustr->countSubstring('ü', false, 3); // 2
+```
+
+#### countChars
+```php
+print $ustr->countChars('ü');   // frequency of "ü" (int)
+print $ustr->countChars(true);  // all chars with own frequencies (array)
+print $ustr->countChars(false); // count of uniq chars (int)
+
+3
+Array
+(
+    [Ü] => 1
+    [z] => 2
+    [ü] => 3
+    [m] => 2
+    [ ] => 1
+)
+5
 ```
 
 

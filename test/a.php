@@ -26,10 +26,12 @@ $ustr = new UString('Üzüm üzüm', $encoding);
 // pre($ustr->substring(0, -1));
 // pre($ustr->substring(-3, -1));
 
-// pre($ustr->countChars());
 // pre($ustr->countSubstring('ü', true));
 // pre($ustr->countSubstring('ü', false));
 // pre($ustr->countSubstring('ü', false, 3));
+pre($ustr->countChars('ü'));
+pre($ustr->countChars(true));
+pre($ustr->countChars(false));
 
 // pre($ustr->length());
 
