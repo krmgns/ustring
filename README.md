@@ -244,7 +244,7 @@ $ustr->surround('|');
 print $ustr->get() // |Üzüm üzüm|
 ```
 
-#### strip
+#### strip stripLeft stripRight
 ```php
 $ustr->strip('Üüm');
 print $ustr->get() // züm üz
@@ -255,21 +255,25 @@ print $ustr->get() // Üzüm üz
 ```
 
 #### replace
+```php
 print $ustr->replace('ü', 'u');
 print $ustr->replace(array('Ü', 'ü'), '...');
 print $ustr->replace(array('Ü', 'ü'), array('U', 'u'));
 ```
 
 #### translate
+```php
 print $ustr->translate('Üü', 'Uu');        // Uzum uzum
 print $ustr->translate(array('ö' => 'o')); // Ü@üm ü@üm
 ```
 
 #### chunk
+```php
 print $ustr->chunk(3); // array(...)
 ```
 
 #### split
+```php
 print $ustr->split(); // array(...)
 ```
 
@@ -278,6 +282,7 @@ print $ustr->stringify(); // Üzüm üzüm
 ```
 
 #### isASCII
+```php
 print $ustr->isASCII(); // false (Üzüm üzüm)
 
 $ustr->set('Hello PHP!');
