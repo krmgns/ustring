@@ -282,7 +282,7 @@ print $ustr->split(); // array(...)
 print $ustr->stringify(); // Üzüm üzüm
 ```
 
-#### isASCII
+#### isASCII()
 ```php
 print $ustr->isASCII(); // false (Üzüm üzüm)
 
