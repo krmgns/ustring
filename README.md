@@ -260,8 +260,8 @@ print $ustr->replace(array('Ü', 'ü'), array('U', 'u'));
 
 #### translate()
 ```php
-print $ustr->translate('Üü', 'Uu');        // Uzum uzum
-print $ustr->translate(array('ö' => 'o')); // Ü@üm ü@üm
+print $ustr->translate('Üüm', 'Uu-');        // Uzu- uzu-
+print $ustr->translate(array('z' => '@')); // Ü@üm ü@üm
 ```
 
 #### chunk()

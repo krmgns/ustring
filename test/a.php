@@ -8,7 +8,7 @@ require_once __DIR__ .'/../UString/UString.php';
 
 $ustr = new UString('Üzüm üzüm', $encoding);
 // $ustr = new UString('Is this a test kiss?', $encoding);
-
+print $ustr->translate('Üüm', 'Uu-');
 // pre($ustr->toLower());
 // pre($ustr->toUpper());
 // pre($ustr->toTitle());
