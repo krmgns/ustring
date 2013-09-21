@@ -178,12 +178,10 @@ print $ustr->countSubstring('ü', false, 3); // 2
 
 #### countChars()
 ```php
-print $ustr->countChars('ü');   // frequency of "ü" (int)
+print $ustr->countChars('ü');   // 3, frequency of "ü" (int)
+print $ustr->countChars(false); // 5, count of uniq chars (int)
 print $ustr->countChars(true);  // all chars with own frequencies (array)
-print $ustr->countChars(false); // count of uniq chars (int)
-
 /*
-3
 Array
 (
     [Ü] => 1
@@ -192,7 +190,6 @@ Array
     [m] => 2
     [ ] => 1
 )
-5
 */
 ```
 
