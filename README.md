@@ -196,7 +196,7 @@ Array
 print $ustr->length(); // 9
 ```
 
-#### position()  positionLeft()  positionRight()
+#### position() positionLeft() positionRight()
 ```php
 print $ustr->position('ü');        // 2
 print $ustr->position('ü', false); // 0
@@ -241,7 +241,7 @@ $ustr->surround('|');
 print $ustr->get() // |Üzüm üzüm|
 ```
 
-#### strip()  stripLeft()  stripRight()
+#### strip() stripLeft() stripRight()
 ```php
 $ustr->strip('Üüm');
 print $ustr->get() // züm üz
