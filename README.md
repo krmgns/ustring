@@ -278,6 +278,7 @@ print $ustr->split(); // array(...)
 ```
 
 #### stringify
+```php
 print $ustr->stringify(); // Üzüm üzüm
 ```
 
