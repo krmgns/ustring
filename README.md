@@ -169,9 +169,9 @@ print $ustr->substring(-3, -1);
 
 #### countSubstring()
 ```php
-print $ustr->countSubstring('ü', true);     // 3
-print $ustr->countSubstring('ü', false);    // 4
-print $ustr->countSubstring('ü', false, 3); // 2
+print $ustr->countSubstring('ü', true);     // 3 (case-sensitive)
+print $ustr->countSubstring('ü', false);    // 4 (no case-sensitive)
+print $ustr->countSubstring('ü', false, 3); // 2 (no case-sensitive, start 3th chr offset)
 ```
 
 #### countChars()
@@ -199,7 +199,7 @@ print $ustr->length(); // 9
 #### position() positionLeft() positionRight()
 ```php
 print $ustr->position('ü');        // 2
-print $ustr->position('ü', false); // 0
+print $ustr->position('ü', false); // 0 (no case-sensitive)
 print $ustr->positionLeft('ü');    // 2 (alias of position)
 print $ustr->positionRight('ü');   // 7
 ```
