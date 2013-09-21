@@ -35,7 +35,18 @@ print $ustr->toLower(); // üzüm üzüm
 * [countSubstring](#countsubstring)
 * [countChars](#countchars)
 * [length](#length)
-* [position positionLeft positionRight](#position)
+* [position positionLeft positionRight](#position-positionleft-positionright)
+* [charAt](#charat)
+* [match](#match)
+* [random](#random)
+* [append](#append)
+* [prepend](#prepend)
+* [surround](#surround)
+* [strip stripLeft stripRight](#strip-stripleft-stripright)
+* [replace](#replace)
+* [translate](#translate)
+* [chunk](#chunk)
+* [split](#split)
 
 
 #### set
@@ -196,9 +207,82 @@ print $ustr->positionLeft('ü');    // 2 (alias of position)
 print $ustr->positionRight('ü');   // 7
 ```
 
+#### charAt
+```php
+print $ustr->charAt(0); // Ü (alias of nth)
+```
 
+#### match
+```php
+print $ustr->match('~(ü)~'); // 1
 
+$ustr->match('~(ü)~', $ms);
+print_r($ms); // array(...)
+```
 
+#### random
+```php
+print $ustr->random();  // m
+print $ustr->random(3); // zmÜ
+```
+
+#### append
+```php
+$ustr->append('...');
+print $ustr->get() // Üzüm üzüm...
+```
+
+#### prepend
+```php
+$ustr->prepend('...');
+print $ustr->get() // ...Üzüm üzüm
+```
+
+#### surround
+```php
+$ustr->surround('|');
+print $ustr->get() // |Üzüm üzüm|
+```
+
+#### strip
+```php
+$ustr->strip('Üüm');
+print $ustr->get() // züm üz
+$ustr->stripLeft('Ü');
+print $ustr->get() // züm üzüm
+$ustr->stripRight('üm');
+print $ustr->get() // Üzüm üz
+```
+
+#### replace
+print $ustr->replace('ü', 'u');
+print $ustr->replace(array('Ü', 'ü'), '...');
+print $ustr->replace(array('Ü', 'ü'), array('U', 'u'));
+```
+
+#### translate
+print $ustr->translate('Üü', 'Uu');        // Uzum uzum
+print $ustr->translate(array('ö' => 'o')); // Ü@üm ü@üm
+```
+
+#### chunk
+print $ustr->chunk(3); // array(...)
+```
+
+#### split
+print $ustr->split(); // array(...)
+```
+
+#### stringify
+print $ustr->stringify(); // Üzüm üzüm
+```
+
+#### isASCII
+print $ustr->isASCII(); // false (Üzüm üzüm)
+
+$ustr->set('Hello PHP!');
+print $ustr->isASCII(); // true
+```
 
 
 

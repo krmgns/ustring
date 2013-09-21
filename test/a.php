@@ -14,10 +14,10 @@ $ustr = new UString('Üzüm üzüm', $encoding);
 // pre($ustr->toTitle());
 
 // pre($ustr->charAt(0));
-pre($ustr->position('ü'));
-pre($ustr->position('ü', false));
-pre($ustr->positionLeft('ü'));
-pre($ustr->positionRight('ü'));
+// pre($ustr->position('ü'));
+// pre($ustr->position('ü', false));
+// pre($ustr->positionLeft('ü'));
+// pre($ustr->positionRight('ü'));
 
 // pre($ustr->substring(1));
 // pre($ustr->substring(-1));
@@ -47,7 +47,7 @@ pre($ustr->positionRight('ü'));
 // pre($ustr->shift());
 // pre($ustr->pop());
 
-// pre($ustr->random(3));
+// pre($ustr->random());
 
 // $ustr->reverse();
 // $ustr->shuffle();
@@ -55,16 +55,16 @@ pre($ustr->positionRight('ü'));
 // $ustr->append('...');
 // $ustr->prepend('...');
 // $ustr->surround('|');
-// $ustr->strip('|');
-// $ustr->stripLeft('|');
-// $ustr->stripRight('|');
+// $ustr->strip('üm');
+// $ustr->stripLeft('Ü');
+// $ustr->stripRight('  züm');
 
 // $ustr->replace('ü', 'u');
 // $ustr->replace(array('Ü', 'ü'), '...');
 // $ustr->replace(array('Ü', 'ü'), array('U', 'u'));
 
 // $ustr->translate('Üü', 'Uu');
-// $ustr->translate(array('ö' => 'o'));
+// $ustr->translate(array('z' => '@'));
 
 // pre($ustr->chunk(3));
 // pre($ustr->split());
@@ -84,8 +84,10 @@ pre($ustr->positionRight('ü'));
 
 // pre($ustr->isASCII());
 
-pre('');
-pre($ustr->get());
+
+
+// pre('');
+// pre($ustr->get());
 
 function pre($s, $e = false) {
     printf("%s\n", print_r($s, 1));

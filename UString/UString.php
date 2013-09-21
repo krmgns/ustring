@@ -494,7 +494,8 @@ class UString
      */
     public function random($length = 1) {
         $chrs = array();
-        $tmp  = $this->shuffle()->_explode();
+        $ustr = new self($this->stringify());
+        $tmp  = $ustr->shuffle()->_explode();
         for ($i = 0; $i < $length; $i++) {
             $chrs[] = $tmp[$i];
         }
@@ -543,9 +544,9 @@ class UString
      * @return object self
      */
     public function strip($chr) {
-        $tmp = $this->stringify();
-        $tmp = trim($tmp, $chr);
-        $this->set($tmp);
+        $chr = preg_quote($chr);
+        $str = preg_replace("~(^[$chr]*)|([$chr]*$)~us", '', $this->stringify());
+        $this->set($str);
         return $this;
     }
 
@@ -556,9 +557,9 @@ class UString
      * @return object self
      */
     public function stripLeft($chr) {
-        $tmp = $this->stringify();
-        $tmp = ltrim($tmp, $chr);
-        $this->set($tmp);
+        $chr = preg_quote($chr);
+        $str = preg_replace("~(^[$chr]*)~us", '', $this->stringify());
+        $this->set($str);
         return $this;
     }
 
@@ -569,9 +570,9 @@ class UString
      * @return object self
      */
     public function stripRight($chr) {
-        $tmp = $this->stringify();
-        $tmp = rtrim($tmp, $chr);
-        $this->set($tmp);
+        $chr = preg_quote($chr);
+        $str = preg_replace("~([$chr]*$)~us", '', $this->stringify());
+        $this->set($str);
         return $this;
     }
 
@@ -580,7 +581,7 @@ class UString
      *
      * @param  mixed  $from
      * @param  mixed  $to
-     * @param  boolean $caseSensitive (not implemented yet, use $from = ['Ü','ü'] instead)
+     * @param  boolean $caseSensitive (not implemented yet, use $from=['Ü','ü'] instead)
      * @return string
      */
     public function replace($from, $to, $caseSensitive = false) {
@@ -601,13 +602,12 @@ class UString
 
         if (is_array($from)) {
             $this->set(strtr($str, $from));
-            return $this->get();
+        } else {
+            $from  = preg_split('~~u', $from, -1, PREG_SPLIT_NO_EMPTY);
+            $to    = preg_split('~~u', $to, -1, PREG_SPLIT_NO_EMPTY);
+            $trans = array_combine(array_values($from), array_values($to));
+            $this->set(strtr($str, $trans));
         }
-
-        $from  = preg_split('~~u', $from, -1, PREG_SPLIT_NO_EMPTY);
-        $to    = preg_split('~~u', $to, -1, PREG_SPLIT_NO_EMPTY);
-        $trans = array_combine(array_values($from), array_values($to));
-        $this->set(strtr($str, $trans));
 
         return $this->get();
     }
@@ -629,6 +629,7 @@ class UString
         foreach ($tmp as $t) {
             $str .= join('', $t) . $end;
         }
+
         return $str;
     }
 
@@ -651,6 +652,7 @@ class UString
             }
             $tmp = $chunks;
         }
+
         return $tmp;
     }
 
@@ -670,9 +672,10 @@ class UString
      * @return boolean
      */
     public function isASCII($extended = false) {
-        return $extended
+        $result = $extended
             ? preg_match('~^[\x00-\xFF]*$~', $this->stringify())
             : preg_match('~^[\x00-\x7F]*$~', $this->stringify());
+        return (bool) $result;
     }
 
     /**
