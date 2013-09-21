@@ -47,29 +47,31 @@ print $ustr->toLower(); // üzüm üzüm
 * [translate](#translate)
 * [chunk](#chunk)
 * [split](#split)
+* [stringify](#stringify)
+* [isASCII](#isASCII)
 
 
-#### set
+#### set()
 ```php
 $ustr->set('New string!');
 ```
 
-#### get
+#### get()
 ```php
 print $ustr->get(); // Üzüm üzüm
 ```
 
-#### toLower
+#### toLower()
 ```php
 print $ustr->toLower(); // üzüm üzüm
 ```
 
-#### toUpper
+#### toUpper()
 ```php
 print $ustr->toUpper(); // ÜZÜM ÜZÜM
 ```
 
-#### toTitle
+#### toTitle()
 ```php
 print $ustr->toTitle(); // Üzüm Üzüm
 ```
