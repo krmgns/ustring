@@ -1,5 +1,3 @@
-A simple string manipulation library (multibyte = true).
-
 **Usage**
 
 ```php
