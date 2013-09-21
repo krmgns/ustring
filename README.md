@@ -76,89 +76,89 @@ print $ustr->toUpper(); // ÜZÜM ÜZÜM
 print $ustr->toTitle(); // Üzüm Üzüm
 ```
 
-#### slugify
+#### slugify()
 ```php
 print $ustr->slugify(); // uzum-uzum
 print $ustr->slugify(false); // Uzum-uzum
 ```
 
-#### toLowerFirst
+#### toLowerFirst()
 ```php
 print $ustr->toLowerFirst(); // üzüm üzüm
 ```
 
-#### toUpperFirst
+#### toUpperFirst()
 ```php
 print $ustr->toUpperFirst(); // Üzüm üzüm
 ```
 
-#### toLowerWords
+#### toLowerWords()
 ```php
 print $ustr->toLowerWords(); // üzüm üzüm
 ```
 
-#### toUpperWords
+#### toUpperWords()
 ```php
 print $ustr->toUpperWords(); // Üzüm Üzüm
 ```
 
-#### first
+#### first()
 ```php
 print $ustr->first(); // Ü
 ```
 
-#### last
+#### last()
 ```php
 print $ustr->last(); // m
 ```
 
-#### nth
+#### nth()
 ```php
 print $ustr->nth(); // m
 ```
 
-#### firstCharIs
+#### firstCharIs()
 ```php
 print $ustr->firstCharIs('Ü'); // true
 ```
 
-#### lastCharIs
+#### lastCharIs()
 ```php
 print $ustr->lastCharIs('m'); // true
 ```
 
-#### nthCharIs
+#### nthCharIs()
 ```php
 print $ustr->nthCharIs(2, 'ü'); // true
 ```
 
-#### shift
+#### shift()
 ```php
 print $ustr->shift(); // Ü
 print $ustr->shift(); // ü
 print $ustr->get(); // üm üzüm
 ```
 
-#### pop
+#### pop()
 ```php
 print $ustr->pop(); // m
 print $ustr->pop(); // ü
 print $ustr->get(); // Üzüm üz
 ```
 
-#### reverse
+#### reverse()
 ```php
 print $ustr->reverse();
 print $ustr->get(); // müzü müzÜ
 ```
 
-#### shuffle
+#### shuffle()
 ```php
 print $ustr->shuffle();
 print $ustr->get(); // zü ümüzÜm
 ```
 
-#### substring
+#### substring()
 ```php
 print $ustr->substring(1);
 print $ustr->substring(-1);
@@ -169,14 +169,14 @@ print $ustr->substring(0, -1);
 print $ustr->substring(-3, -1);
 ```
 
-#### countSubstring
+#### countSubstring()
 ```php
 print $ustr->countSubstring('ü', true);     // 3
 print $ustr->countSubstring('ü', false);    // 4
 print $ustr->countSubstring('ü', false, 3); // 2
 ```
 
-#### countChars
+#### countChars()
 ```php
 print $ustr->countChars('ü');   // frequency of "ü" (int)
 print $ustr->countChars(true);  // all chars with own frequencies (array)
@@ -196,12 +196,12 @@ Array
 */
 ```
 
-#### length
+#### length()
 ```php
 print $ustr->length(); // 9
 ```
 
-#### position positionLeft positionRight
+#### position()  positionLeft()  positionRight()
 ```php
 print $ustr->position('ü');        // 2
 print $ustr->position('ü', false); // 0
@@ -209,12 +209,12 @@ print $ustr->positionLeft('ü');    // 2 (alias of position)
 print $ustr->positionRight('ü');   // 7
 ```
 
-#### charAt
+#### charAt()
 ```php
 print $ustr->charAt(0); // Ü (alias of nth)
 ```
 
-#### match
+#### match()
 ```php
 print $ustr->match('~(ü)~'); // 1
 
@@ -222,31 +222,31 @@ $ustr->match('~(ü)~', $ms);
 print_r($ms); // array(...)
 ```
 
-#### random
+#### random()
 ```php
 print $ustr->random();  // m
 print $ustr->random(3); // zmÜ
 ```
 
-#### append
+#### append()
 ```php
 $ustr->append('...');
 print $ustr->get() // Üzüm üzüm...
 ```
 
-#### prepend
+#### prepend()
 ```php
 $ustr->prepend('...');
 print $ustr->get() // ...Üzüm üzüm
 ```
 
-#### surround
+#### surround()
 ```php
 $ustr->surround('|');
 print $ustr->get() // |Üzüm üzüm|
 ```
 
-#### strip stripLeft stripRight
+#### strip()  stripLeft()  stripRight()
 ```php
 $ustr->strip('Üüm');
 print $ustr->get() // züm üz
@@ -256,30 +256,30 @@ $ustr->stripRight('üm');
 print $ustr->get() // Üzüm üz
 ```
 
-#### replace
+#### replace()
 ```php
 print $ustr->replace('ü', 'u');
 print $ustr->replace(array('Ü', 'ü'), '...');
 print $ustr->replace(array('Ü', 'ü'), array('U', 'u'));
 ```
 
-#### translate
+#### translate()
 ```php
 print $ustr->translate('Üü', 'Uu');        // Uzum uzum
 print $ustr->translate(array('ö' => 'o')); // Ü@üm ü@üm
 ```
 
-#### chunk
+#### chunk()
 ```php
 print $ustr->chunk(3); // array(...)
 ```
 
-#### split
+#### split()
 ```php
 print $ustr->split(); // array(...)
 ```
 
-#### stringify
+#### stringify()
 ```php
 print $ustr->stringify(); // Üzüm üzüm
 ```
@@ -291,7 +291,3 @@ print $ustr->isASCII(); // false (Üzüm üzüm)
 $ustr->set('Hello PHP!');
 print $ustr->isASCII(); // true
 ```
-
-
-
-
