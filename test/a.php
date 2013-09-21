@@ -72,7 +72,7 @@ $ustr = new UString('Üzüm üzüm', $encoding);
 
 // pre($ustr->toLowerFirst());
 // pre($ustr->toUpperFirst());
-pre($ustr->toLowerWords());
+// pre($ustr->toLowerWords());
 // pre($ustr->toUpperWords());
 
 // pre($ustr->slugify());
