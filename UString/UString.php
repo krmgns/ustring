@@ -171,8 +171,8 @@ class UString
             return lcwords($str);
         }
 
-        return preg_replace_callback('~(\w+)~u', function($s) {
-            return mb_strtolower(mb_substr($s[0], 0, 1)) . mb_substr($s[0], 1);
+        return preg_replace_callback('~^\w|\s+(\w)~u', function($m) {
+            return mb_strtolower($m[0]);
         }, $str);
     }
 
@@ -187,8 +187,8 @@ class UString
             return ucwords($str);
         }
 
-        return preg_replace_callback('~^\w|\s+(\w)~u', function($s) {
-            return mb_strtoupper($s[0]);
+        return preg_replace_callback('~^\w|\s+(\w)~u', function($m) {
+            return mb_strtoupper($m[0]);
         }, $str);
     }
 
