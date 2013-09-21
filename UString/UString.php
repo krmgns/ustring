@@ -39,7 +39,7 @@ class UString
     public function __construct($string, $encoding = self::DEFAULT_ENCODING) {
         // We need multibyte extension
         if (!function_exists('mb_internal_encoding')) {
-            throw new UStringException('Wee need "mbstring" extension!');
+            throw new UStringException('We need "mbstring" extension!');
         }
 
         // Set vars
@@ -187,8 +187,8 @@ class UString
             return ucwords($str);
         }
 
-        return preg_replace_callback('~(\w+)~u', function($s) {
-            return mb_strtoupper(mb_substr($s[0], 0, 1)) . mb_substr($s[0], 1);
+        return preg_replace_callback('~^\w|\s+(\w)~u', function($s) {
+            return mb_strtoupper($s[0]);
         }, $str);
     }
 
