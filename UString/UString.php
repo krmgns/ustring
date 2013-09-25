@@ -253,7 +253,7 @@ class UString
 
     /**
      * Shift first chr from string
-     * Note: This method affects self $_string
+     * Note: This method changes self $_string
      *
      * @return string
      */
@@ -266,7 +266,7 @@ class UString
 
     /**
      * Pop last chr from string
-     * Note: This method affects self $_string
+     * Note: This method changes self $_string
      *
      * @return string
      */
@@ -279,7 +279,7 @@ class UString
 
     /**
      * Reverse string
-     * Note: This method affects self $_string
+     * Note: This method changes self $_string
      *
      * @return object self
      */
@@ -296,7 +296,7 @@ class UString
 
     /**
      * Shuffle string
-     * Note: This method affects self $_string
+     * Note: This method changes self $_string
      *
      * @return object self
      */
