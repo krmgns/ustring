@@ -6,9 +6,9 @@ header('Content-Type: text/plain; charset='. $encoding);
 require_once __DIR__ .'/../UString/UStringException.php';
 require_once __DIR__ .'/../UString/UString.php';
 
-$ustr = new UString('Üzüm üzüm', $encoding);
+$ustr = new UString('Üzüm üzüm---z---', $encoding);
 // $ustr = new UString('Is this a test kiss?', $encoding);
-print $ustr->translate('Üüm', 'Uu-');
+// print $ustr->translate('Üüm', 'Uu-');
 // pre($ustr->toLower());
 // pre($ustr->toUpper());
 // pre($ustr->toTitle());
@@ -75,7 +75,7 @@ print $ustr->translate('Üüm', 'Uu-');
 // pre($ustr->toLowerWords());
 // pre($ustr->toUpperWords());
 
-// pre($ustr->slugify());
+pre($ustr->slugify());
 
 // $x = $ustr->match('~(ü)~');
 // pre($x);

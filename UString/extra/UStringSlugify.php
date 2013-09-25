@@ -45,7 +45,7 @@ class UStringSlugify
         // Convert chars to ascii
         $input = strtr($input, self::$_charTable);
         // Remove others
-        $input = preg_replace('~[^-\w]+~', $sep, $input);
+        $input = preg_replace(array('~[^-\w]+~', '~-+~'), $sep, $input);
         // Trim seperator if exists
         return trim($input, $sep);
     }
