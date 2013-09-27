@@ -133,7 +133,7 @@ print $ustr->nthCharIs(2, 'ü'); // true
 #### shift()
 ```php
 print $ustr->shift(); // Ü
-print $ustr->shift(); // ü
+print $ustr->shift(); // z
 print $ustr->get(); // üm üzüm
 ```
 
