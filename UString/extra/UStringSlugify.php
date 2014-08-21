@@ -16,7 +16,7 @@
  */
 
 /**
- * @class UStringSlugify v0.1
+ * @class UStringSlugify v0.2
  */
 class UStringSlugify
 {
@@ -41,11 +41,23 @@ class UStringSlugify
      * @param  string $sep
      * @return string
      */
-    public static function convert($input, $sep = '-') {
+    public static function convert($input, $sep = '-', $lower = false) {
         // Convert chars to ascii
         $input = strtr($input, self::$_charTable);
+
+        // Escape seperator
+        $sepEsc = preg_quote($sep);
+
         // Remove others
-        $input = preg_replace(array('~[^-\w]+~', '~-+~'), $sep, $input);
+        $input = preg_replace(array(
+            "~[^{$sepEsc}\w]+~", "~{$sepEsc}+~"
+        ), $sep, $input);
+
+        // To lower case
+        if ($lower) {
+            $input = strtolower($input);
+        }
+
         // Trim seperator if exists
         return trim($input, $sep);
     }
