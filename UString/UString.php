@@ -16,7 +16,7 @@
  */
 
 /**
- * @class UString v0.1
+ * @class UString v0.2
  */
 class UString
 {
@@ -118,19 +118,15 @@ class UString
     /**
      * Convert to slug string
      *
-     * @param boolean $lc (to lower case)
+     * @param boolean $lower (to lower case)
      * @return string
      */
-    public function slugify($lc = true) {
+    public function slugify($sep = '-', $lower = true) {
         // Get extension file
-        include_once __DIR__ .'/extra/UStringSlugify.php';
+        include_once(__DIR__.'/extra/UStringSlugify.php');
 
         $str = $this->stringify();
-        $str = UStringSlugify::convert($str);
-        if ($lc) {
-            $str = strtolower($str);
-        }
-
+        $str = UStringSlugify::convert($str, $sep, $lower);
         return $str;
     }
 
