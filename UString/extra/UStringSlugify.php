@@ -41,7 +41,7 @@ class UStringSlugify
      * @param  string $sep
      * @return string
      */
-    public static function convert($input, $sep = '-', $lower = false) {
+    public static function convert($input, $sep = '-', $lower = true) {
         // Convert chars to ascii
         $input = strtr($input, self::$_charTable);
 
